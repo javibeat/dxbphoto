@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>DXB PHOTO</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.png" alt="favicon" type="image/png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<header></header>
+
+<body>
+
+    <div class="bouncing-blobs-container">
+        <div class="bouncing-blobs-glass"></div>
+        <div class="bouncing-blobs">
+          <div class="bouncing-blob bouncing-blob--blue"></div>
+          <div class="bouncing-blob bouncing-blob--blue"></div>
+          <div class="bouncing-blob bouncing-blob--blue"></div>
+          <div class="bouncing-blob bouncing-blob--white"></div>
+          <div class="bouncing-blob bouncing-blob--purple"></div>
+          <div class="bouncing-blob bouncing-blob--purple"></div>
+          <div class="bouncing-blob bouncing-blob--pink"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+    <div class="search-container">
+        <form class="search-box">
+            <input type="text" placeholder="Search by venue name" />
+            <input type="date" />
+            <button type="submit">SEARCH</button>
+        </form>
+    </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('menu.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('header').innerHTML = data;
+                    initializeMenu();
+                })
+                .catch(error => console.error('Error loading menu:', error));
+        });
+    </script>
+
+    <script src="script.js"></script>
+    <script src="fondo.js"></script>
+
+</body>
+
+</html>

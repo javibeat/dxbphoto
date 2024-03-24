@@ -1,0 +1,374 @@
+:root {
+    --primary-color: #ad814b;
+    --background-color: #ffffff;
+    --accent-color: #ffda5f;
+    --background-color2: #000000;
+
+    background-color: rgb(0, 0, 0);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.bouncing-blob {
+    width: 32vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    will-change: transform;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transform-origin: left top;
+}
+
+.bouncing-blob--blue {
+    background: #ff0000;
+}
+
+.bouncing-blob--white {
+    background: #ffffff;
+    z-index: 2;
+    width: 15vw;
+}
+
+.bouncing-blob--purple {
+    background: #0038a7;
+}
+
+.bouncing-blob--pink {
+    background: #f6d01050;
+}
+
+.bouncing-blobs-container {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bouncing-blobs-glass {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(140px);
+    -webkit-backdrop-filter: blur(140px);
+    pointer-events: none;
+}
+
+.bouncing-blobs {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 1200px) {
+    .bouncing-blobs-glass {
+        backdrop-filter: blur(120px);
+        -webkit-backdrop-filter: blur(120px);
+    }
+}
+
+@media (max-width: 500px) {
+    .bouncing-blob {
+        width: 20vw;
+    }
+
+    .bouncing-blob--white {
+        width: 30vw;
+    }
+
+    .bouncing-blobs-glass {
+        backdrop-filter: blur(90px);
+        -webkit-backdrop-filter: blur(90px);
+    }
+}
+
+a {
+    text-decoration: none;
+    color: var(--background-color)
+}
+
+/*-----MENU------*/
+
+header {
+    background-color: #88888863;
+    width: calc(100% - 40px);
+    /* Width with 20px margin on each side */
+    max-width: 1080px;
+    position: fixed;
+    margin: 20px auto;
+    /* Centered with auto margin and 20px on top */
+    border-radius: 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Optional shadow for depth */
+}
+
+li {
+    list-style: none;
+}
+
+.logo {
+    width: 200px;
+    padding: 12px 0 5px 0;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 0 24px;
+    z-index: 99;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-menu.active {
+    left: 0;
+}
+
+.nav-link {
+    transition: 0.7s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--background-color);
+}
+
+@media (max-width: 1080px) {
+    .navbar {
+        max-width: 1000px;
+        height: 40px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .logo {
+        width: 150px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 90px;
+        /* Adjust if your mobile header height is different */
+        left: 0;
+        /* Start from the very left edge */
+        right: 0;
+        /* Start from the very right edge */
+        border-radius: 15px;
+        flex-direction: column;
+        background-color: var(--background-color2);
+        text-align: center;
+        transition: 0.3s;
+        z-index: 99;
+        overflow-x: hidden;
+        /* Prevent any horizontal overflow */
+        transform: translateX(-110%);
+        /* Move it a bit more than its own width to the left */
+        display: flex;
+        /* Ensuring the menu is ready for flex layout */
+        gap: 20px;
+        /* Spacing between menu items */
+        padding: 20px;
+        /* Padding inside the menu */
+    }
+
+    .nav-item {
+        margin: 16px 20px;
+        /* Add horizontal margin to match the header's margin */
+    }
+
+    .nav-menu.active {
+        transform: translateX(calc(10px + (100vw - 100%) / 2));
+        /* This centers the menu taking into account the exact viewport width */
+    }
+
+}
+
+/*-----END MENU----*/
+
+.container {
+    background-color: #5a5a5a9a;
+    max-width: 1080px;
+    position: absolute;
+    /* Changed from fixed to absolute */
+    top: 110px;
+    /* Adjusted top position to push it below the header */
+    left: 20px;
+    /* 20px from the left */
+    right: 20px;
+    /* 20px from the right */
+    bottom: 20px;
+    /* 20px from the bottom */
+    border-radius: 15px;
+    /* Rounded corners */
+    margin: auto;
+    padding: 20px;
+    /* Padding inside the container */
+    z-index: 10;
+    /* Higher z-index so it's above other content */
+    display: flex;
+    /* Flexbox to align children */
+    flex-direction: column;
+    /* Children in a column */
+    justify-content: space-between;
+    /* Space between header and search box */
+    align-items: center;
+    /* Center items horizontally */
+}
+
+/* Search Box Styles */
+.search-container {
+    width: auto;
+    /* Full width of its parent */
+    max-width: 600px;
+    /* Maximum width of the search box */
+    margin-top: auto;
+    /* Push it to the bottom */
+    display: flex;
+    /* Use flexbox for alignment */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    gap: 10px;
+    /* Space between elements */
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.search-box input[type="text"],
+.search-box input[type="date"] {
+    flex: 1;
+    /* Flex grow to fill available space */
+    padding: 10px;
+    border: 2px solid #ad814b;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ad814b;
+    /* Use primary color for the button */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-box button:hover {
+    background-color: #935f35;
+    /* Darken button on hover */
+}
+
+/* Responsive behavior for navigation links */
+@media (max-width: 768px) {
+
+    header {
+        position: fixed;
+        width: calc(100% - 20px);
+        /* Smaller side margins for mobile */
+        margin: 10px auto;
+        /* Adjusted top margin */
+        top: 0;
+        /* Adjust top position */
+        left: 10px;
+        /* Adjust left position */
+        right: 10px;
+        /* Adjust right position */
+    }
+
+    .nav-item--responsive {
+        display: block;
+        /* Show responsive links */
+    }
+
+    .container {
+        position: fixed; /* Se mantiene fijo en la pantalla */
+        top: 90px; /* Espacio desde la parte superior, considerando la altura del header */
+        left: 10px; /* Espacio desde la parte izquierda */
+        right: 10px; /* Espacio desde la parte derecha */
+        bottom: 10px; /* Espacio desde la parte inferior */
+    }
+
+    .search-container {
+        /* Center search box within the container on mobile */
+        flex-direction: column;
+        /* Stack inputs vertically */
+        gap: 5px;
+        /* Reduce gap between elements */
+    }
+}
