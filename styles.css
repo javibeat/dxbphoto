@@ -316,11 +316,13 @@ li {
     border: 2px solid #ad814b;
     border-radius: 5px;
     font-size: 16px;
+    height: 40px;
 }
 
 .search-box button {
     padding: 10px 20px;
     border: none;
+    height: 40px;
     background-color: #ad814b;
     /* Use primary color for the button */
     color: white;
@@ -357,18 +359,26 @@ li {
     }
 
     .container {
-        position: fixed; /* Se mantiene fijo en la pantalla */
-        top: 90px; /* Espacio desde la parte superior, considerando la altura del header */
-        left: 10px; /* Espacio desde la parte izquierda */
-        right: 10px; /* Espacio desde la parte derecha */
-        bottom: 10px; /* Espacio desde la parte inferior */
+        position: fixed;
+        /* Se mantiene fijo en la pantalla */
+        top: 90px;
+        /* Espacio desde la parte superior, considerando la altura del header */
+        left: 10px;
+        /* Espacio desde la parte izquierda */
+        right: 10px;
+        /* Espacio desde la parte derecha */
+        bottom: 10px;
+        /* Espacio desde la parte inferior */
     }
 
-    .search-container {
-        /* Center search box within the container on mobile */
+    .search-box {
+        display: flex;
         flex-direction: column;
-        /* Stack inputs vertically */
-        gap: 5px;
-        /* Reduce gap between elements */
+        margin: 5px;
+    }
+
+    .search-box input[type="text"],
+    .search-box input[type="date"] {
+        margin-bottom: 10px;
     }
 }
