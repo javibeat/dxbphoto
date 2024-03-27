@@ -197,6 +197,20 @@ li {
 
 @media (max-width: 768px) {
 
+    header {
+        position: fixed;
+        width: calc(100% - 20px);
+        /* Smaller side margins for mobile */
+        margin: 10px auto;
+        /* Adjusted top margin */
+        top: 0;
+        /* Adjust top position */
+        left: 10px;
+        /* Adjust left position */
+        right: 10px;
+        /* Adjust right position */
+    }
+
     .logo {
         width: 150px;
     }
@@ -246,6 +260,7 @@ li {
         z-index: 100; /* Más alto que el menú para que se muestre encima */
         width: 50px; /* Asegúrate de que el ancho es suficiente */
         height: 50px; /* Asegúrate de que la altura es suficiente */
+        top: 15%;
         justify-content: center;
         align-items: center;
     }    
@@ -336,36 +351,12 @@ li {
 /* Responsive behavior for navigation links */
 @media (max-width: 768px) {
 
-    header {
-        position: fixed;
-        width: calc(100% - 20px);
-        /* Smaller side margins for mobile */
-        margin: 10px auto;
-        /* Adjusted top margin */
-        top: 0;
-        /* Adjust top position */
-        left: 10px;
-        /* Adjust left position */
-        right: 10px;
-        /* Adjust right position */
-    }
-
-    .nav-item--responsive {
-        display: block;
-        /* Show responsive links */
-    }
-
     .container {
         position: fixed;
-        /* Se mantiene fijo en la pantalla */
         top: 90px;
-        /* Espacio desde la parte superior, considerando la altura del header */
         left: 10px;
-        /* Espacio desde la parte izquierda */
         right: 10px;
-        /* Espacio desde la parte derecha */
         bottom: 10px;
-        /* Espacio desde la parte inferior */
     }
 
     .search-box {
