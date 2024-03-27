@@ -373,6 +373,9 @@ li {
 
     .search-box input[type="text"],
     .search-box input[type="date"] {
-        margin-bottom: 10px;
+        height: 40px; /* Altura fija para todos los elementos */
+    padding: 10px; /* Espacio interno fijo para todos */
+    margin-bottom: 10px; /* Espacio entre elementos */
+    box-sizing: border-box;
     }
 }
