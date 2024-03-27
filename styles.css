@@ -201,8 +201,6 @@ li {
         width: 150px;
     }
 
-
-
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
@@ -243,12 +241,14 @@ li {
     }
     
     .hamburger {
-        z-index: 100; /* Asegúrate de que esté por encima del menú */
-        display: flex;
-        flex-direction: column;
+        display: block;
+        position: relative; /* o absolute dependiendo de tu layout */
+        z-index: 100; /* Más alto que el menú para que se muestre encima */
+        width: 50px; /* Asegúrate de que el ancho es suficiente */
+        height: 50px; /* Asegúrate de que la altura es suficiente */
         justify-content: center;
         align-items: center;
-    }
+    }    
 
 }
 
