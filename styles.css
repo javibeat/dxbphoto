@@ -115,13 +115,11 @@ a {
 /*-----MENU------*/
 
 header {
-    background-color: #88888863;
+    background-color: #5a5a5a60;
     width: calc(100% - 40px);
-    /* Width with 20px margin on each side */
-    max-width: 1080px;
+    max-width: 1280px;
     position: fixed;
     margin: 20px auto;
-    /* Centered with auto margin and 20px on top */
     border-radius: 15px;
     top: 0;
     left: 0;
@@ -281,11 +279,11 @@ li {
 /*-----END MENU----*/
 
 .container {
-    background-color: #5a5a5a9a;
-    max-width: 1080px;
+    background-color: #5a5a5a60;
+    max-width: 1280px;
     position: absolute;
     /* Changed from fixed to absolute */
-    top: 110px;
+    top: 105px;
     /* Adjusted top position to push it below the header */
     left: 20px;
     /* 20px from the left */
@@ -373,9 +371,8 @@ li {
     .search-container {
         display: flex;
         flex-direction: column;
-        /* Asegura que los elementos estén uno encima del otro */
+        width: 100%;
         align-items: stretch;
-        /* Estira los elementos para llenar el contenedor */
     }
 
     .search-box {
@@ -384,14 +381,14 @@ li {
         margin: 5px;
     }
 
-    .search-box input[type="text"],
-    .search-box input[type="date"] {
+    .search-box input[type="text"] {
         height: 40px;
-        /* Altura fija para todos los elementos */
         padding: 10px;
-        /* Espacio interno fijo para todos */
         margin-bottom: 10px;
-        /* Espacio entre elementos */
         box-sizing: border-box;
+    }
+
+    .search-box input[type="date"] {
+        margin-bottom: 10px;
     }
 }
