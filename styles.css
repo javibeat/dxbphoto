@@ -241,29 +241,40 @@ li {
         background-color: var(--background-color2);
         padding: 20px;
         z-index: 99;
-        transform: translateY(-100%); /* Empieza fuera de la pantalla */
-        transition: transform 0.5s ease; /* Transición suave */
+        transform: translateY(-100%);
+        /* Empieza fuera de la pantalla */
+        transition: transform 0.5s ease;
+        /* Transición suave */
     }
 
     .nav-menu.active {
-        transform: translateY(0); /* Se desliza a su posición final */
+        transform: translateY(0);
+        /* Se desliza a su posición final */
     }
 
     .nav-item {
         margin: 16px 20px;
         /* Add horizontal margin to match the header's margin */
     }
-    
+
     .hamburger {
         display: block;
-        position: relative; /* o absolute dependiendo de tu layout */
-        z-index: 100; /* Más alto que el menú para que se muestre encima */
-        width: 50px; /* Asegúrate de que el ancho es suficiente */
-        height: 50px; /* Asegúrate de que la altura es suficiente */
+        position: relative;
+        /* o absolute dependiendo de tu layout */
+        z-index: 100;
+        /* Más alto que el menú para que se muestre encima */
+        width: 50px;
+        /* Asegúrate de que el ancho es suficiente */
+        height: 50px;
+        /* Asegúrate de que la altura es suficiente */
         top: 15%;
         justify-content: center;
         align-items: center;
-    }    
+    }
+
+    .nav-link {
+        font-size: 30px;
+    }
 
 }
 
@@ -361,8 +372,10 @@ li {
 
     .search-container {
         display: flex;
-        flex-direction: column; /* Asegura que los elementos estén uno encima del otro */
-        align-items: stretch; /* Estira los elementos para llenar el contenedor */
+        flex-direction: column;
+        /* Asegura que los elementos estén uno encima del otro */
+        align-items: stretch;
+        /* Estira los elementos para llenar el contenedor */
     }
 
     .search-box {
@@ -373,9 +386,12 @@ li {
 
     .search-box input[type="text"],
     .search-box input[type="date"] {
-        height: 40px; /* Altura fija para todos los elementos */
-    padding: 10px; /* Espacio interno fijo para todos */
-    margin-bottom: 10px; /* Espacio entre elementos */
-    box-sizing: border-box;
+        height: 40px;
+        /* Altura fija para todos los elementos */
+        padding: 10px;
+        /* Espacio interno fijo para todos */
+        margin-bottom: 10px;
+        /* Espacio entre elementos */
+        box-sizing: border-box;
     }
 }
