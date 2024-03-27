@@ -201,9 +201,7 @@ li {
         width: 150px;
     }
 
-    .hamburger {
-        display: block;
-    }
+
 
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
@@ -219,38 +217,37 @@ li {
 
     .nav-menu {
         position: fixed;
-        top: 90px;
-        /* Adjust if your mobile header height is different */
+        top: 0;
         left: 0;
-        /* Start from the very left edge */
         right: 0;
-        /* Start from the very right edge */
-        border-radius: 15px;
-        flex-direction: column;
-        background-color: var(--background-color2);
-        text-align: center;
-        transition: 0.3s;
-        z-index: 99;
-        overflow-x: hidden;
-        /* Prevent any horizontal overflow */
-        transform: translateX(-110%);
-        /* Move it a bit more than its own width to the left */
+        bottom: 0;
+        height: 100vh;
         display: flex;
-        /* Ensuring the menu is ready for flex layout */
-        gap: 20px;
-        /* Spacing between menu items */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--background-color2);
         padding: 20px;
-        /* Padding inside the menu */
+        z-index: 99;
+        transform: translateY(-100%); /* Empieza fuera de la pantalla */
+        transition: transform 0.5s ease; /* Transición suave */
+    }
+
+    .nav-menu.active {
+        transform: translateY(0); /* Se desliza a su posición final */
     }
 
     .nav-item {
         margin: 16px 20px;
         /* Add horizontal margin to match the header's margin */
     }
-
-    .nav-menu.active {
-        transform: translateX(calc(10px + (100vw - 100%) / 2));
-        /* This centers the menu taking into account the exact viewport width */
+    
+    .hamburger {
+        z-index: 100; /* Asegúrate de que esté por encima del menú */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
 }
