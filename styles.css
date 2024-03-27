@@ -359,6 +359,12 @@ li {
         bottom: 10px;
     }
 
+    .search-container {
+        display: flex;
+        flex-direction: column; /* Asegura que los elementos estén uno encima del otro */
+        align-items: stretch; /* Estira los elementos para llenar el contenedor */
+    }
+
     .search-box {
         display: flex;
         flex-direction: column;
